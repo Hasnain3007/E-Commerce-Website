@@ -16,13 +16,13 @@ for (let i = 0; i < unique.length; i++) {
 
 for (let i = 0; i < data.products.length; i++) {
 
-    cardMain.innerHTML += `<div class="card py-4 my-2">
+    cardMain.innerHTML += `<div class="card py-5 my-2 px-1">
                 <img width='100px' src='${data.products[i].images}'>
                 <h3>${data.products[i].title}</h3>
                 <h5>Category : ${data.products[i].category}</h5>
                 <h6>Rating : ${data.products[i].rating}</h6>
                 <h4>$${data.products[i].price}</h4>
-                <button id="btn" class="btn">Add To Cart</button>                
+                <button id="btn" class="btn mt-1">Add To Cart</button>                
             </div>`
 
 }
@@ -30,24 +30,24 @@ select.addEventListener('click', () => {
     cardMain.innerHTML = ''
     for (let i = 0; i < data.products.length; i++) {
         if (select.value == data.products[i].category) {
-            cardMain.innerHTML += `<div class="card py-4 my-2">
+            cardMain.innerHTML += `<div class="card py-4 px-1 my-2">
             <img width='100px' src='${data.products[i].images}'>            
                     <h3>${data.products[i].title}</h3>
                     <h5>Category : ${data.products[i].category}</h5>
                     <h6>Rating : ${data.products[i].rating}</h6>
                     <h4>$${data.products[i].price}</h4>
-                    <button id="btn" class="btn">Add To Cart</button>       
+                    <button id="btn" class="btn mt-1">Add To Cart</button>       
                     
                 </div>`
 
         } else if (select.value == 'all') {
-            cardMain.innerHTML += `<div class="card py-4 my-2">           
+            cardMain.innerHTML += `<div class="card py-5 px-1 my-2">           
             <img width='100px' src='${data.products[i].images}'> 
             <h3>${data.products[i].title}</h3>
             <h5>Category : ${data.products[i].category}</h5>
             <h6>Rating : ${data.products[i].rating}</h6>
             <h4>$${data.products[i].price}</h4>
-            <button id="btn" class="btn">Add To Cart</button>
+            <button id="btn" class="btn mt-1">Add To Cart</button>
             
         </div>`
         }
@@ -60,7 +60,7 @@ btn.forEach((btn, index) => {
         Swal.fire({
             imageUrl: `${data.products[index-1].images}`,
             icon: "success",
-            title: `${data.products[index].title}`,
+            title: `${data.products[index-1].title}`,
             imageHeight: 150,
             html: `<h2 style="color: green;">Successfully Added</h2>`,
             timer: 2500
