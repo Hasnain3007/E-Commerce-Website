@@ -12,6 +12,7 @@ for (let i = 0; i < unique.length; i++) {
 
 }
 
+// drop down complate
 
 for (let i = 0; i < data.products.length; i++) {
 
@@ -47,11 +48,23 @@ select.addEventListener('click', () => {
             <h6>Rating : ${data.products[i].rating}</h6>
             <h4>$${data.products[i].price}</h4>
             <button id="btn" class="btn">Add To Cart</button>
-
             
         </div>`
         }
     }
 })
-var btn = document.getElementById('btn')
-console.log(btn);
+var btn = document.querySelectorAll('.btn')
+    // console.log(btn);
+btn.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        Swal.fire({
+            imageUrl: `${data.products[index].images}`,
+            icon: "success",
+            title: `${data.products[index].title}`,
+            imageHeight: 150,
+            html: `<h2 style="color: green;">Successfully Added</h2>`,
+            timer: 2500
+                // imageAlt: "img"
+        });
+    })
+})
