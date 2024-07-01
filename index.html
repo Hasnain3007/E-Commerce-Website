@@ -29,14 +29,50 @@
         border: 2px solid black;
         width: 120px;
     }
+    
+    .navbar {
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+        background-color: black !important;
+        color: white !important;
+        align-items: center !important;
+    }
+    
+    p {
+        font-size: 25px;
+    }
+    
+    .dropDown {
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: black;
+        color: white !important;
+        padding-left: 10px;
+    }
+    
+    .btn-outline-light {
+        border: 1px solid white !important;
+    }
 </style>
 
 <body>
-    <h1 style="text-align: center;">E Commerse Filter</h1>
-    <select id="select">
-        <option value="all">All Category</option>
-    </select>
-    <div class="cardMain d-flex" id="cardmain">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <p class="p">E-Commerce</p>
+            <select id="select" class="dropDown">
+                <option value="all">All Category</option>
+            </select>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- <h1 style="text-align: center;">E Commerse Filter</h1> -->
+
+    <div class="cardMain d-flex mt-5" id="cardmain">
     </div>
 
 

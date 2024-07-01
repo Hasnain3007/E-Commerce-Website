@@ -16,7 +16,7 @@ for (let i = 0; i < unique.length; i++) {
 
 for (let i = 0; i < data.products.length; i++) {
 
-    cardMain.innerHTML += `<div class="card">
+    cardMain.innerHTML += `<div class="card py-4 my-2">
                 <img width='100px' src='${data.products[i].images}'>
                 <h3>${data.products[i].title}</h3>
                 <h5>Category : ${data.products[i].category}</h5>
@@ -30,7 +30,7 @@ select.addEventListener('click', () => {
     cardMain.innerHTML = ''
     for (let i = 0; i < data.products.length; i++) {
         if (select.value == data.products[i].category) {
-            cardMain.innerHTML += `<div class="card">
+            cardMain.innerHTML += `<div class="card py-4 my-2">
             <img width='100px' src='${data.products[i].images}'>            
                     <h3>${data.products[i].title}</h3>
                     <h5>Category : ${data.products[i].category}</h5>
@@ -41,7 +41,7 @@ select.addEventListener('click', () => {
                 </div>`
 
         } else if (select.value == 'all') {
-            cardMain.innerHTML += `<div class="card">           
+            cardMain.innerHTML += `<div class="card py-4 my-2">           
             <img width='100px' src='${data.products[i].images}'> 
             <h3>${data.products[i].title}</h3>
             <h5>Category : ${data.products[i].category}</h5>
