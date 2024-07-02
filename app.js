@@ -57,7 +57,7 @@ var btn = document.querySelectorAll('.btn')
 btn.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         Swal.fire({
-            imageUrl: `${data.products[index-1].images}`,
+            imageUrl: `${data.products[index-1].thumbnail}`,
             icon: "success",
             title: `${data.products[index-1].title}`,
             imageHeight: 150,
