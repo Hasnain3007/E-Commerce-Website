@@ -17,7 +17,7 @@ for (let i = 0; i < unique.length; i++) {
 for (let i = 0; i < data.products.length; i++) {
 
     cardMain.innerHTML += `<div class="card py-5 my-2 px-1">
-                <img width='100px' src='${data.products[i].images}'>
+                <img width='100px' src='${data.products[i].thumbnail}'>
                 <h3>${data.products[i].title}</h3>
                 <h5>Category : ${data.products[i].category}</h5>
                 <h6>Rating : ${data.products[i].rating}</h6>
@@ -31,7 +31,7 @@ select.addEventListener('click', () => {
     for (let i = 0; i < data.products.length; i++) {
         if (select.value == data.products[i].category) {
             cardMain.innerHTML += `<div class="card py-4 px-1 my-2">
-            <img width='100px' src='${data.products[i].images}'>            
+            <img width='100px' src='${data.products[i].thumbnail}'>            
                     <h3>${data.products[i].title}</h3>
                     <h5>Category : ${data.products[i].category}</h5>
                     <h6>Rating : ${data.products[i].rating}</h6>
@@ -42,7 +42,7 @@ select.addEventListener('click', () => {
 
         } else if (select.value == 'all') {
             cardMain.innerHTML += `<div class="card py-5 px-1 my-2">           
-            <img width='100px' src='${data.products[i].images}'> 
+            <img width='100px' src='${data.products[i].thumbnail}'> 
             <h3>${data.products[i].title}</h3>
             <h5>Category : ${data.products[i].category}</h5>
             <h6>Rating : ${data.products[i].rating}</h6>
@@ -54,7 +54,6 @@ select.addEventListener('click', () => {
     }
 })
 var btn = document.querySelectorAll('.btn')
-    // console.log(btn);
 btn.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         Swal.fire({
